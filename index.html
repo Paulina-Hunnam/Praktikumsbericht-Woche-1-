@@ -1,50 +1,280 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Weekly Task Log</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praktikumsbericht</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f5f0ea;
-    }
+<script src="https://kit.fontawesome.com/7a4b62b0a4.js" crossorigin="anonymous"></script>
 
-    /* HEADER */
-    .header {
-      background: #1f2f4f;
-      color: white;
-      padding: 40px 80px;
-      display: flex;
-      justify-content: space-between;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f0ea;
+}
 
-    .small {
-      font-size: 12px;
-      opacity: 0.6;
-      letter-spacing: 1px;
-    }
+/* HEADER */
+.header {
+  background: #1f2f4f;
+  color: white;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
 
-    /* TABS */
-    .tabs {
-      background: #1f2f4f;
-      padding: 0 80px 20px;
-    }
+/* WEEK NAV */
+.weeks {
+  background: #1f2f4f;
+  padding: 10px 40px;
+}
+.weeks span {
+  color: #bbb;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.weeks .active {
+  color: orange;
+}
 
-    .tabs span {
-      margin-right: 25px;
-      color: #8fa2c0;
-      cursor: pointer;
-    }
+/* DAY TABS */
+.tabs {
+  background: #1f2f4f;
+  padding: 10px 40px 20px;
+}
+.tabs span {
+  margin-right: 20px;
+  color: #8fa2c0;
+  cursor: pointer;
+}
+.tabs .active {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
 
-    .tabs .active {
-      color: orange;
-      border-bottom: 2px solid orange;
-      padding-bottom: 5px;
-    }
+/* LAYOUT */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
 
-    /* MAIN LAYOUT */
-    main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
+/* MOBILE */
+@media(max-width:768px){
+  main { grid-template-columns: 1fr; }
+  .header { flex-direction: column; }
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* DAY VISIBILITY */
+.day { display:none; }
+.active-day { display:block; }
+.week { display:none; }
+.active-week { display:block; }
+
+/* TAGS */
+.tag { padding:4px 10px; border-radius:5px; font-size:12px; }
+.purple{ background:#e9ddff; }
+.orange{ background:#ffe2c7; }
+
+/* SIDE */
+.box { background:white; padding:20px; margin-bottom:20px; border-radius:10px;}
+.tools span{
+  display:inline-block;
+  background:#1f2f4f;
+  color:white;
+  padding:5px 10px;
+  margin:5px;
+  border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div>
+    <h1>IT‑Dienstleistungen CC</h1>
+    <p>Praktikumstagebuch</p>
+  </div>
+</header>
+
+<!-- WEEK SWITCH -->
+<div class="weeks">
+  <span class="week-tab active" data-week="w1">Woche 1</span>
+  <span class="week-tab" data-week="w2">Woche 2</span>
+</div>
+
+<!-- DAY TABS -->
+<div class="tabs">
+  <span class="tab active" data-day="mo">Mo</span>
+  <span class="tab" data-day="di">Di</span>
+  <span class="tab" data-day="mi">Mi</span>
+  <span class="tab" data-day="do">Do</span>
+  <span class="tab" data-day="fr">Fr</span>
+</div>
+
+<main>
+
+<section>
+
+<!-- WEEK 1 -->
+<div id="w1" class="week active-week">
+
+<div id="mo" class="day active-day">
+<h2>Montag</h2>
+<p>15. Juni 2026</p>
+<div class="card">
+<h3><i class="fas fa-print"></i> Druckerinstallation</h3>
+<p>Canon-Drucker eingerichtet und auf LAN umgestellt.</p>
+</div>
+</div>
+
+<div id="di" class="day">
+<h2>Dienstag</h2>
+<p>16. Juni 2026</p>
+<div class="card">
+<h3><i class="fas fa-wifi"></i> Netzwerk</h3>
+<p>WLAN eingerichtet und Geräte installiert.</p>
+</div>
+</div>
+
+<div id="mi" class="day">
+<h2>Mittwoch</h2>
+<p>17. Juni 2026</p>
+<div class="card">
+<h3><i class="fas fa-database"></i> Backup</h3>
+<p>Daten gesichert und Entra verwendet.</p>
+</div>
+</div>
+
+<div id="do" class="day">
+<h2>Donnerstag</h2>
+<p>18. Juni 2026</p>
+<div class="card">
+<h3><i class="fas fa-microchip"></i> Hardware</h3>
+<p>Systeme geklont und formatiert.</p>
+</div>
+</div>
+
+<div id="fr" class="day">
+<h2>Freitag</h2>
+<p>19. Juni 2026</p>
+<div class="card">
+<h3><i class="fas fa-server"></i> Server</h3>
+<p>Server beim Kunden eingerichtet.</p>
+</div>
+</div>
+
+</div>
+
+<!-- WEEK 2 -->
+<div id="w2" class="week">
+
+<div id="mo" class="day active-day">
+<h2>Montag</h2>
+<p>22. Juni 2026</p>
+<div class="card">
+<h3>Neue Aufgaben</h3>
+<p>Weitere IT-Support Tätigkeiten durchgeführt.</p>
+</div>
+</div>
+
+<div id="di" class="day">
+<h2>Dienstag</h2>
+<p>23. Juni 2026</p>
+<div class="card">
+<h3>Installation</h3>
+<p>Geräte vorbereitet und Systeme installiert.</p>
+</div>
+</div>
+
+<div id="mi" class="day">
+<h2>Mittwoch</h2>
+<p>24. Juni 2026</p>
+<div class="card">
+<h3>Netzwerk</h3>
+<p>Netzwerkprobleme gelöst und getestet.</p>
+</div>
+</div>
+
+<div id="do" class="day">
+<h2>Donnerstag</h2>
+<p>25. Juni 2026</p>
+<div class="card">
+<h3>Support</h3>
+<p>Kundenprobleme analysiert und gelöst.</p>
+</div>
+</div>
+
+<div id="fr" class="day">
+<h2>Freitag</h2>
+<p>26. Juni 2026</p>
+<div class="card">
+<h3>Abschluss</h3>
+<p>Dokumentation und Abschlussarbeiten.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<aside>
+
+<div class="box">
+<h4>LERNZIEL</h4>
+<p>Praxis im IT-Support sammeln.</p>
+</div>
+
+<div class="box">
+<h4>TOOLS</h4>
+<div class="tools">
+<span><i class="fab fa-windows"></i> Windows</span>
+<span><i class="fas fa-network-wired"></i> Netzwerk</span>
+<span><i class="fas fa-print"></i> Drucker</span>
+</div>
+</div>
+
+</aside>
+
+</main>
+
+<script>
+// DAY SWITCH
+document.querySelectorAll(".tab").forEach(tab=>{
+  tab.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    this.classList.add("active");
+
+    document.querySelectorAll(".day").forEach(d=>d.classList.remove("active-day"));
+
+    let days=document.querySelectorAll(".week.active-week .day");
+    days.forEach(d=>{
+      if(d.id===this.dataset.day){ d.classList.add("active-day"); }
+    });
+  });
+});
+
+// WEEK SWITCH
+document.querySelectorAll(".week-tab").forEach(tab=>{
+  tab.addEventListener("click",function(){
+    document.querySelectorAll(".week-tab").forEach(t=>t.classList.remove("active"));
+    this.classList.add("active");
+
+    document.querySelectorAll(".week").forEach(w=>w.classList.remove("active-week"));
+    document.getElementById(this.dataset.week).classList.add("active-week");
+  });
+});
+</script>
+
+</body>
+</html>
