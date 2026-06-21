@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Task Log</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f0ea;
+    }
+
+    /* HEADER */
+    .header {
+      background: #1f2f4f;
+      color: white;
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .small {
+      font-size: 12px;
+      opacity: 0.6;
+      letter-spacing: 1px;
+    }
+
+    /* TABS */
+    .tabs {
+      background: #1f2f4f;
+      padding: 0 80px 20px;
+    }
+
+    .tabs span {
+      margin-right: 25px;
+      color: #8fa2c0;
+      cursor: pointer;
+    }
+
+    .tabs .active {
+      color: orange;
+      border-bottom: 2px solid orange;
+      padding-bottom: 5px;
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      padding: 50px 80px;
+    }
+
+    /* LEFT */
+    .left h2 {
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    /* TASK CARD */
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .time {
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* TAGS */
+    .tag {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    .purple {
+      background: #e9ddff;
+      color: #5b3aa4;
+    }
+
+    .orange {
+      background: #ffe2c7;
+      color: #b35a00;
+    }
+
+    /* RIGHT PANEL */
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .box-title {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .tools span {
+      display: inline-block;
+      background: #1f2f4f;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin: 5px;
+      font-size: 12px;
+    }
+
+    .note {
+      border-left: 4px solid orange;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div>
+    <p class="small">PRAKTIKUMSTAGEBUCH · WOCHE 1</p>
+    <h1>IT‑Dienstleistungen CC</h1>
+    <p>IT‑ und Support‑Team – 9 Mitarbeitende</p>
+  </div>
+
+  <div>
+    <p class="small">ANLEITENDE</p>
+    <p><strong>Axel<br>Bie</strong></p>
+  </div>
+</header>
+
+<div class="tabs">
+  <span class="tab active" onclick="showDay('mo')">Mo</span>
+  <span class="tab" onclick="showDay('di')">Di</span>
+  <span class="tab" onclick="showDay('mi')">Mi</span>
+  <span class="tab" onclick="showDay('do')">Do</span>
+  <span class="tab" onclick="showDay('fr')">Fr</span>
+</div>
+
+<main>
+
+  <section class="left">
+    <h2>Montag</h2>
+    <p class="date">16. Juni 2026</p>
+
+    <div class="card">
+      <div class="top">
+        <span class="time">08:00–08:30</span>
+        <span class="tag purple">Organisation</span>
+      </div>
+      <h3>Ankunft & Einführung</h3>
+      <p>Empfang durch Axel und Vorstellung im Team.</p>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <span class="time">08:30–09:30</span>
+        <span class="tag orange">Hardware</span>
+      </div>
+      <h3>Bürorundgang</h3>
+      <p>Einrichtung meines Arbeitsplatzes.</p>
+    </div>
+  </section>
+
+  <aside>
+
+    <div class="box">
+      <p class="box-title">LERNZIEL</p>
+      <p>Überblick über die Struktur gewinnen.</p>
+    </div>
+
+    <div class="box">
+      <p class="box-title">VERWENDETE TOOLS</p>
+      <div class="tools">
+        <span>TeamViewer</span>
+        <span>Active Directory</span>
+        <span>Windows 11</span>
+      </div>
+    </div>
+
+    <div class="box note">
+      <p class="box-title">TAGESNOTIZ</p>
+      <p>Sehr strukturierter erster Tag.</p>
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>
